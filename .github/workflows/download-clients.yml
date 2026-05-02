@@ -39,7 +39,7 @@ jobs:
             TAG=$(curl -sSL \
               -H "Accept: application/vnd.github+json" \
               -H "Authorization: Bearer $GH_TOKEN" \
-              https://api.github.com/repos/sartoopjj/thefeed/releases/latest \
+              https://api.github.com/repos/AmiiirCom/thefeed/releases/latest \
               | jq -r '.tag_name')
             echo "Using latest published tag: $TAG"
           fi
@@ -68,7 +68,7 @@ jobs:
           ASSETS=$(curl -sSL \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer $GH_TOKEN" \
-            "https://api.github.com/repos/sartoopjj/thefeed/releases/tags/${TAG}" \
+            "https://api.github.com/repos/AmiiirCom/thefeed/releases/tags/${TAG}" \
             | jq -r '.assets[]
                 | select(
                     (.name | startswith("thefeed-client"))
