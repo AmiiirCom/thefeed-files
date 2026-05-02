@@ -68,7 +68,7 @@ jobs:
           ASSETS=$(curl -sSL \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer $GH_TOKEN" \
-            "https://api.github.com/repos/AmiiirCom/thefeed/releases/tags/${TAG}" \
+            "https://api.github.com/repos/homakco/thefeed-test/releases/tags/${TAG}" \
             | jq -r '.assets[]
                 | select(
                     (.name | startswith("thefeed-client"))
